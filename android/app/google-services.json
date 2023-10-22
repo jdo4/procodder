@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "238173822948",
+    "project_id": "procodder-db7f8",
+    "storage_bucket": "procodder-db7f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238173822948:android:57f8b0fc0cb8ff2c9071f1",
+        "android_client_info": {
+          "package_name": "com.example.procodder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238173822948-3crkcn655b2sl32tg6s1hudoqosb1m1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.procodder",
+            "certificate_hash": "438f75c8571088670cf4846fa943359d41abb8cd"
+          }
+        },
+        {
+          "client_id": "238173822948-g9g7qv7klaqduep7pve5qtfm6a26f1nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgn-jgG1gzY37_7VpupJZl3T05qW8cn0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238173822948-g9g7qv7klaqduep7pve5qtfm6a26f1nr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "238173822948-95rf3410eb38e1qebiojclq36olctmnh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.procodder.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
