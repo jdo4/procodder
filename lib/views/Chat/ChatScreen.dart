@@ -3,17 +3,22 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:procodder/config/config.dart';
+import 'package:procodder/models/Chat.model.dart';
+import 'package:procodder/models/User.model.dart';
 
 class ChatPage extends StatefulWidget {
-
+final User u;
  final String uid;
-  const ChatPage({super.key, required this.uid});
+  const ChatPage({super.key, required this.uid, required this.u});
 
   @override
   _ChatPageState createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> {
+
+  TextEditingController msgController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,9 +58,9 @@ class _ChatPageState extends State<ChatPage> {
                   color: Colors.white,
                 ),
               ),
-              const Text(
-                'Fiona',
-                style: TextStyle(
+                Text(
+                widget.u.userName,
+                style: const TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
@@ -100,14 +105,14 @@ class _ChatPageState extends State<ChatPage> {
             physics: const BouncingScrollPhysics(),
             itemCount: chatController.chatmsg.length,
             itemBuilder: (BuildContext context, int index) {
+              ChatMessage cm = chatController.chatmsg.elementAt(index);
               return _itemChat(
-                chat: 1,
-                message:
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                chat: cm.chat,
+                message:cm.message,
                 time: '18.00',
               );
             },
-          ): Center(child: CircularProgressIndicator(),)),
+          ): const Center(child: CircularProgressIndicator(),)),
         ),
     );
   }
@@ -160,6 +165,7 @@ class _ChatPageState extends State<ChatPage> {
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           color: Colors.white,
           child: TextField(
+            controller: msgController,
             decoration: InputDecoration(
               hintText: 'Type your message...',
               suffixIcon: Container(
@@ -167,10 +173,16 @@ class _ChatPageState extends State<ChatPage> {
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.indigo),
                 padding: const EdgeInsets.all(14),
-                child: const Icon(
-                  Icons.send_rounded,
-                  color: Colors.white,
-                  size: 28,
+                child:   IconButton(onPressed: () {
+                  if(msgController.value.text.trim().isNotEmpty){
+                    ChatMessage cm = ChatMessage(message: msgController.value.text, chat: 0, time: "");
+                    chatController.newMassage(widget.uid, cm);
+                    FocusScope.of(context).unfocus();
+                    msgController.clear();
+                  }
+
+                },
+                  icon: const Icon(Icons.send_rounded,color: Colors.white),
                 ),
               ),
               filled: true,

@@ -8,7 +8,7 @@ import 'components.dart';
 class ProfilePage extends StatelessWidget {
 
   ProfilePage({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,9 +70,7 @@ class ProfilePage extends StatelessWidget {
                   shrinkWrap: true,
                   padding:   const EdgeInsets.all(10.0),
                   children: [
-                    profileListTile(context,"Password",Icons.password,true,(){}),
-                    profileListTile(context,"Password",Icons.password,false,(){}),
-                    profileListTile(context,"Password",Icons.password,false,(){}),
+                    profileListTile(context,"Chat",Icons.password,false,(){}),
                     profileListTile(context,"Support",Icons.support,false,(){}),
                     profileListTile(context,"Sign out",HeroIcons.arrow_right_on_rectangle,false,(){
                       authController.signOut();

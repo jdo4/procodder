@@ -42,9 +42,9 @@ class _ItemScreenState extends State<postScreen> {
                         child: InkWell(
                           onTap: (){
                             String currentUserId = box.read("userId");
-                            String uid = "${u.userID}_$currentUserId";
+                            String uid = "${u.userID}__$currentUserId";
                             chatController.subscribeToFirestoreStream(uid);
-                            Get.to(()=> ChatPage(uid : uid));
+                            Get.to(()=> ChatPage(uid : uid, u: u,));
                           },
                           child: Container(
                               decoration: BoxDecoration(
