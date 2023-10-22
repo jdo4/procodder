@@ -8,11 +8,9 @@ import 'components.dart';
 class ProfilePage extends StatelessWidget {
 
   ProfilePage({super.key});
-
-
+  
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Obx(()=>
       userContoller.isEmployeeAvailable.isTrue ?

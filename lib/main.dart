@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:procodder/controllers/ChatContoller.dart';
 import 'package:procodder/controllers/PostController.dart';
 import 'package:procodder/views/Home/homePage.dart';
 import 'package:procodder/views/Post/CreatePostScreen.dart';
@@ -21,6 +22,7 @@ Future<void> main() async {
   await firebaseInitialization.then((value) {
     Get.put(AuthController());
     Get.put(PostController());
+    Get.put(ChatController());
   });
   runApp(const MyApp());
 }

@@ -9,6 +9,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../controllers/AuthController.dart';
+import '../controllers/ChatContoller.dart';
 import '../controllers/PostController.dart';
 import '../controllers/UserController.dart';
 import '../firebase_options.dart';
@@ -17,10 +18,12 @@ import '../firebase_options.dart';
 AuthController authController = AuthController.instance;
 UserContoller userContoller = UserContoller.instance;
 PostController postController = PostController.instance;
+ChatController chatController = ChatController.instance;
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 CollectionReference userRef = db.collection('users');
 CollectionReference postRef = db.collection('posts');
+CollectionReference chatRef = db.collection('chats');
 
 
 Reference storageReference = FirebaseStorage.instance.ref();
