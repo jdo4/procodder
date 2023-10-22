@@ -71,6 +71,7 @@ class AuthController extends GetxController {
 
   void signInWithGoogle() async {
     try {
+      print("Signing");
       GoogleSignInAccount? googleSignInAccount = await googleSign.signIn();
 
       if (googleSignInAccount != null) {

@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: GetMaterialApp(
+          debugShowMaterialGrid:false,
         theme: ThemeData(
             primaryColorDark: const Color(0xff1F41BB),
             primaryColor: const Color(0xff1F41BB),
@@ -80,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: IndexedStack(
           index: _selectedItemPosition,
           children:   <Widget>[
-            postScreen(),
-            CreatePostScreen(),
+            const postScreen(),
+            const CreatePostScreen(),
             ProfilePage(),
           ],
         ),

@@ -56,8 +56,6 @@ class UserContoller extends GetxController {
 
   getEmployeeDetail(String id){
     if(id.toString() != ''){
-      hasEmployeeDetails.value = true;
-      print(users.length);
        return  users.where((element) => element.userID == id).first;
     }
   }
@@ -66,7 +64,7 @@ class UserContoller extends GetxController {
   getEmployeeData() async {
       try {
         String userid  = box.read('userId');
-        print(userid);
+
         // Reference to the document
         DocumentReference documentRef = userRef.doc(userid);
 
@@ -76,9 +74,7 @@ class UserContoller extends GetxController {
         if (documentSnapshot.exists) {
           // Document exists, you can access its data
           Map<String, dynamic> data = documentSnapshot.data() as Map<String, dynamic>;
-
           // Access specific fields
-
           user = u.User.fromJson(data);
           print(user.userEmail);
           isEmployeeAvailable.value = true;

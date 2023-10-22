@@ -23,7 +23,7 @@ class _ItemScreenState extends State<postScreen> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        title: const Text("Peer"),
+        title: const Text("SolveMate"),
       ),
       body: Obx(() => postController.hasData.isTrue
           ? postController.posts.isNotEmpty
@@ -58,6 +58,11 @@ class _ItemScreenState extends State<postScreen> {
                                       backgroundColor: Theme.of(context)
                                           .unselectedWidgetColor
                                           .withOpacity(.5),
+                                      child: Center(
+                                        child: Text(u.userName[0],style: TextStyle(
+                                          color: Theme.of(context).primaryColor
+                                        ),),
+                                      ),
                                     ),
                                     title: Text(u.userName),
                                     subtitle: Text("${dt.month}-${dt.day}-${dt.year}"),
